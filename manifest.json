@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "战舰世界国服船池提交",
+  "version": "1.0.0",
+  "description": "读取国服官网的账号ID与港口战舰ID，提交到 wows.shinoaki.com 用于圣诞船池统计，仅在点击按钮后发起请求",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://armory.wowsgame.cn/*",
+        "https://logbook.wowsgame.cn/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "host_permissions": [
+    "https://armory.wowsgame.cn/*",
+    "https://vortex.wowsgame.cn/*",
+    "https://vortex.worldofwarships.asia/*",
+    "https://v3-api.wows.shinoaki.com/*"
+  ]
+}
