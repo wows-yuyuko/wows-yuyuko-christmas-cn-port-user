@@ -12,7 +12,6 @@
 - 仅在你点击「获取我的数据」后才发起请求，页面加载时不联网
 - 不会采集密码、令牌、战绩、聊天等任何其他信息
 - 数据只缓存在浏览器本地（`localStorage`），可随时清除
-- 提交接口：`POST https://v3-api.wows.shinoaki.com/public/wows/christmas/ship/port`
 
 ## 安装
 
