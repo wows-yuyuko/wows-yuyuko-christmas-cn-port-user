@@ -2,6 +2,8 @@
 // @name         战舰世界国服船池提交
 // @namespace    https://wows.shinoaki.com/
 // @version      2.0.0
+// @updateURL    https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/wows-christmas-cn-port.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/wows-christmas-cn-port.user.js
 // @description  主动请求 armory/logbook 的 vortex inventory 接口，把账号ID与战舰ID提交到 wows.shinoaki.com
 // @author       Xun
 // @match        https://armory.wowsgame.cn/*
