@@ -71,8 +71,6 @@ https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/
 
 - 仅支持国服（CN）账号
 - 账号需先在站内查询过战绩，否则提交会提示 `accountId不存在`
-- 同一账号提交有 10 秒频率限制
-- 提交的战舰ID必须存在于战舰库中，且不能重复
 
 ## 目录结构
 
@@ -84,13 +82,6 @@ https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/
     ├── content.js
     └── service-worker.js
 ```
-
-## 实现说明
-
-- 油猴脚本在页面内直接 `fetch`，跨域受限时退回 `GM_xmlhttpRequest`
-- 扩展的 content script 优先用页面 `fetch`（vortex 已对官网域名开放 CORS），失败时通过 service worker 请求
-- 两个版本逻辑一致：先判断当前站点（armory / logbook），再构造对应的账号信息与 inventory 请求
-- inventory 请求体：`{"query":"{ inventory { vehicles } }","variables":null,"operationName":null}`
 
 ## 自动更新
 
