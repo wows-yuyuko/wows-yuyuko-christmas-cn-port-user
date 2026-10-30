@@ -37,6 +37,30 @@ https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/
 
 脚本带 `@updateURL` / `@downloadURL`，发布新版本后 Tampermonkey 会自动检查更新（默认每 24 小时一次，也可在管理面板手动「检查脚本更新」）。
 
+**第三步：开启用户脚本权限（Chrome / Edge 必做）**
+
+新版 Chrome / Edge 默认关闭了 Tampermonkey 执行用户脚本的权限，不开会导致脚本完全不会注入（页面上没有任何面板）。
+
+Edge：
+
+1. 地址栏输入 `edge://extensions/?id=iikmkjmpaadaobahmlepeloendndfphd`
+2. 打开「允许用户脚本」
+3. 「站点访问权限」选择「在所有网站上」
+4. 需要在 InPrivate 窗口使用的话，再打开「在 InPrivate 中允许」
+
+![Edge 开启允许用户脚本](images/edge-allow-user-scripts.png)
+
+Chrome：
+
+1. 地址栏输入 `chrome://extensions/?id=dhdgffkkebhmkfjojejmpbldmpobfkfo`
+2. 打开「允许运行用户脚本」
+3. 「有权访问的网站」选择「在所有网站上」
+4. 需要在无痕模式使用的话，再打开「在无痕模式下启用」
+
+![Chrome 开启允许运行用户脚本](images/chrome-allow-user-scripts.png)
+
+Firefox 的 Tampermonkey 默认就允许运行用户脚本，无需此步骤。
+
 ### Chrome 扩展
 
 插件尚未上架 Chrome 应用商店，目前只能本地加载：
@@ -77,10 +101,13 @@ https://cdn.jsdelivr.net/gh/wows-yuyuko/wows-yuyuko-christmas-cn-port-user@main/
 ```
 .
 ├── wows-christmas-cn-port.user.js   # 油猴脚本
-└── extension/                       # Chrome / Edge 扩展
-    ├── manifest.json
-    ├── content.js
-    └── service-worker.js
+├── extension/                       # Chrome / Edge 扩展
+│   ├── manifest.json
+│   ├── content.js
+│   └── service-worker.js
+└── images/                          # README 安装说明截图
+    ├── edge-allow-user-scripts.png
+    └── chrome-allow-user-scripts.png
 ```
 
 ## 自动更新
